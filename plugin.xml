@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+    <extension
+        point="org.eclipse.ui.commands">
+        <category
+            id="markedly.commands.category"
+            name="Bookmarks">
+        </category>
+        <command
+            categoryId="org.eclipse.ui.category.navigate"
+            id="markedly.commands.nextBookmark"
+            name="Next Bookmark">
+        </command>
+        <command
+            categoryId="org.eclipse.ui.category.navigate"
+            id="markedly.commands.previousBookmark"
+            name="Previous Bookmark">
+        </command>
+        <command
+            categoryId="org.eclipse.ui.category.edit"
+            id="markedly.commands.toggleBookmark"
+            name="Toggle Bookmark">
+        </command>
+    </extension>
+    <extension
+        point="org.eclipse.ui.handlers">
+        <handler
+            class="markedly.handlers.NextBookmarkHandler"
+            commandId="markedly.commands.nextBookmark">
+        </handler>
+        <handler
+            class="markedly.handlers.PreviousBookmarkHandler"
+            commandId="markedly.commands.previousBookmark">
+        </handler>
+        <handler
+            class="markedly.handlers.ToggleBookmarkHandler"
+            commandId="markedly.commands.toggleBookmark">
+        </handler>
+    </extension>
+    <extension
+        point="org.eclipse.ui.bindings">
+        <key
+            commandId="markedly.commands.nextBookmark"
+            contextId="org.eclipse.ui.textEditorScope"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
+            sequence="">
+        </key>
+        <key
+            commandId="markedly.commands.previousBookmark"
+            contextId="org.eclipse.ui.textEditorScope"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
+            sequence="">
+        </key>
+        <key
+            commandId="markedly.commands.toggleBookmark"
+            contextId="org.eclipse.ui.textEditorScope"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
+            sequence="">
+        </key>
+    </extension>
+</plugin>
